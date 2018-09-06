@@ -8,6 +8,8 @@
 <html>
     <head>
         <%-- Include do header jspf --%> 
+                <%@include file="WEB-INF/header.jspf" %>
+
         <title>Tabela Price</title>
             <%
                 double pmt = 0;
@@ -17,6 +19,7 @@
     </head>
     <body>
         <%-- Include do menu jspf --%> 
+        <%@include file="WEB-INF/Menu.jspf" %>
         <div align="center">
         <h1>Tabela Price</h1>
         <div class="panel panel-default">
@@ -66,5 +69,7 @@
         <br><hr>
         </div>
         <%-- Include do rodapé --%>
+                <%@include file="WEB-INF/footer.jspf" %>
+
     </body>
 </html>
