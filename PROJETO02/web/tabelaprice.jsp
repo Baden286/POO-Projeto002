@@ -9,6 +9,7 @@
     <head>
         <%-- Include do header jspf --%> 
                 <%@include file="WEB-INF/header.jspf" %>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
 
         <title>Tabela Price</title>
             <%
