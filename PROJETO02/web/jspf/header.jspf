@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<center><h2 style="color: gray">Cáculo de Amortização</h2>
+       <h3 style="color: gray">POO - Projeto 2</h3>
+</center>
+
+<!--aqui pode ter umas imagens-->

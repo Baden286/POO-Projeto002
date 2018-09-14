@@ -1,6 +1,5 @@
-<%-- fork
+<%-- 
     Document   : amortamer
-
     Created on : Sep 1, 2018, 12:14:21 PM
     Author     : EduardoSimao
 --%>
@@ -10,35 +9,42 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <center><%@include file="jspf/header.jspf" %></center> 
+
         <title>Amortização Americana</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     </head>
 
    
 
-    <body>
+    <body class="container">
+        <%@include file="jspf/Menu.jspf" %>
+
         <div>
-            <h1><center>Amortização Americana</center></h1><br>
+            <h1><center>Amortização Americana</center></h1><br><hr>
             <div class="container">
                 <form action="amortamer.jsp" method="POST">
                     <div class="col-md-6 offset-md-5">
-                        <label>Empréstimo</label><br />
+                        <label>Capital</label><br />
                         <input type="text" name="saldo" /><br />
                     </div>
+                    
                     <div class="col-md-6 offset-md-5">
-                        <label>Meses</label><br />
-                        <input type="text" name="m" /><br />
-                    </div>
-                    <div class="col-md-6 offset-md-5">
-                        <label>Taxa </label><br />
+                        <label>Taxa (em %)</label><br />
                         <input type="text" name="t" /><br />
                     </div>
-                    <br />
+                    
+                    <div class="col-md-6 offset-md-5">
+                        <label>Período (em meses)</label><br />
+                        <input type="text" name="m" /><br />
+                    </div>
+                    <br>
                     <div class="col-md-6 offset-md-5">
                         <input class="btn btn primary" type="submit" value="Enviar" />
                         <input class="btn btn primary" type="submit" value="Cancelar" />
                     </div>
                 </form>
+                <br>
             </div>
         </div>
         <br>
@@ -113,5 +119,8 @@
                 }
             %>
         </div>
+
     </body>
+                <%@include file="jspf/footer.jspf" %>
+
 </html>

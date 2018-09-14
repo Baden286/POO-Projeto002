@@ -11,7 +11,8 @@
 <html>
     <head>
         <%-- Include do header jspf --%> 
-                <%@include file="WEB-INF/header.jspf" %>
+        <center><%@include file="jspf/header.jspf" %></center> 
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
 
         <title>Tabela Price</title>
@@ -23,24 +24,25 @@
     </head>
     <body>
         <%-- Include do menu jspf --%> 
-        <%@include file="WEB-INF/Menu.jspf" %>
+        <%@include file="jspf/Menu.jspf" %>
         <div align="center">
-        <h1>Tabela Price</h1>
+        <h1>Tabela Price</h1><br>
         <div class="panel panel-default">
-        <div class="panel-body">
-            <p>A Tabela PRICE é um sistema de amortização de dívidas, também chamado de sistema francês de amortização. É conhecido por ter as parcelas constantes – e não a amortização, como no caso do SAC. É muito utilizado para calcular empréstimos de curto prazo (compras parceladas em geral) e financiamentos de curto e médio prazos (financiamentos de veículos, por exemplo).</p>
-        </div>
-        <hr/>
-        <h3>Informa o Capital</h3>
+        <h3>Capital</h3>
         <form>
         <input type="text" name="PV"/>
-        <h3>Informe a taxa(Em %)</h3>       
+        <h3>Taxa(em %)</h3>       
         <input type="text" name="i"/>        
-        <h3>Informe o periodo(Em meses)</h3>        
+        <h3>Período(em meses)</h3>        
         <input type="text" name="n"/></br>
-        <input type="submit" value="Calcular"/>
-        </form><hr/>
-        
+<br />
+                   
+                        <input class="btn btn primary" type="submit" value="Enviar" />
+                        <input class="btn btn primary" type="submit" value="Cancelar" />
+                        
+        </form>
+                <br>
+
             
             <% try{ %>
             <%   
@@ -73,7 +75,7 @@
         <br><hr>
         </div>
         <%-- Include do rodapé --%>
-                <%@include file="WEB-INF/footer.jspf" %>
+                <%@include file="jspf/footer.jspf" %>
 
     </body>
 </html>

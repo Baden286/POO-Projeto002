@@ -1,0 +1,53 @@
+<%@ page pageEncoding="UTF-8" %>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="../css/footer.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">   
+    
+<footer>
+        <div class="footer-top"> 
+           <div class="container">
+            
+             <div class="col-lg-1 col-xs-12 text-center"></div>
+              <div class="col-lg-2 col-xs-12 text-center">
+                 <a href="https://github.com/Baden286"><i class="fa fa-github fa-2x"></i>Baden Damasio</a>
+             </div>
+              <div class="col-lg-2 col-xs-12 text-center">
+                 <a href="https://github.com/FabricioCaldas"><i class="fa fa-github fa-2x"></i>Eduardo Simão</a>
+             </div>
+              <div class="col-lg-2 col-xs-12 text-center">
+                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Julio Takeda</a>
+             </div>
+              <div class="col-lg-2 col-xs-12 text-center">
+                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Pablo Miguel</a>
+             </div>
+              <div class="col-lg-2 col-xs-12 text-center">
+                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Victoria Rodovalho</a>
+             </div>
+
+
+           </div> 
+        </div> 
+        
+  
+        
+        
+        
+    </footer>
+<br>
+    
+<div class="copyright" >
+
+     <div class="container">
+       
+         <div class="row text-center">
+         	<p>Copyright © 2018 All rights reserved</p>
+         </div>
+         
+ 	   </div>
+    </div>
+    
