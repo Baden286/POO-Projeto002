@@ -14,10 +14,11 @@
     </head>
     <body>
         <%-- Include do cabecalho --%>
+        <%@include file="jspf/Menu.jspf" %>
         <link rel="stylesheet" href="css/css.css">
 
         
-        <div class="flexbox-grupo">
+        <b><div class="flexbox-grupo">
             <div class="grupo">
                 <h3 class="h3-grupo">Grupo composto por:</h3>
                 <ol>
@@ -29,16 +30,16 @@
                 </ol>
             </div>
             <div class="finalidade">
-                <h3>Finalidade do Projeto</h3>
+                <h3 class="h3-grupo">Finalidade do Projeto</h3>
                 <p class="p-index">Calcular os sistemas de amortizacao, atraves dos calculos da Tabela Price, Tabela SAC (Sistema de Amortizacao Constante) e Sistema Americano.</p>
             </div>
         </div>
         
         <section class="secao-inicio blog">
-            <h2>O que é?</h2>
+            <h3 class="h3-grupo">O que é?</h3>
             <ol>
                 <li class="mais-recente">
-                    <a >Amortizacao</a>
+                    <a href="Index.jsp">Amortizacao</a>
                     <p class="inicio-post">
                         Amortização é o mesmo que redução da dívida, ou seja, amortizar é pagar uma parte da dívida para que ela reduza de tamanho até a sua eliminação. Entretanto, em toda dívida há cobrança de juros, portanto para amortizar uma dívida é necessário que o pagamento seja maior que os juros cobrados no período. 
                     </p>
@@ -65,5 +66,5 @@
         
     <%-- Include do rodapé --%>
     <%@include file="jspf/footer.jspf" %>
-    </body>
+    </b></body>
 </html>

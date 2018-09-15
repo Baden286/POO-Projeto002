@@ -8,7 +8,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">   
     
-<footer>
+<footer style="background-color: #222222; padding: 30px 30px 75px" ><b>
         <div class="footer-top"> 
            <div class="container">
             
@@ -17,16 +17,16 @@
                  <a href="https://github.com/Baden286"><i class="fa fa-github fa-2x"></i>Baden Damasio</a>
              </div>
               <div class="col-lg-2 col-xs-12 text-center">
-                 <a href="https://github.com/FabricioCaldas"><i class="fa fa-github fa-2x"></i>Eduardo Simão</a>
+                 <a href="https://github.com/EduardoSimao"><i class="fa fa-github fa-2x"></i>Eduardo Simão</a>
              </div>
               <div class="col-lg-2 col-xs-12 text-center">
-                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Julio Takeda</a>
+                 <a href="https://github.com/JulioCesarTakeda"><i class="fa fa-github fa-2x"></i>Julio Takeda</a>
              </div>
               <div class="col-lg-2 col-xs-12 text-center">
-                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Pablo Miguel</a>
+                 <a href="https://github.com/minemap1"><i class="fa fa-github fa-2x"></i>Pablo Miguel</a>
              </div>
               <div class="col-lg-2 col-xs-12 text-center">
-                 <a href="https://github.com/AlexRFX"><i class="fa fa-github fa-2x"></i>Victoria Rodovalho</a>
+                 <a href="https://github.com/rodovalhovic"><i class="fa fa-github fa-2x"></i>Victoria Rodovalho</a>
              </div>
 
 
@@ -37,17 +37,11 @@
         
         
         
-    </footer>
+    </b></footer>
 <br>
-    
-<div class="copyright" >
-
-     <div class="container">
-       
-         <div class="row text-center">
-         	<p>Copyright © 2018 All rights reserved</p>
-         </div>
-         
- 	   </div>
-    </div>
+            
+<center>Copyright © 2018 All rights reserved</center>
+        
+ 	  
+   
     

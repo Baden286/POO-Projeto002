@@ -16,38 +16,41 @@
     </head>
     <body>
         <%-- Include do menu jspf --%> 
-        <%@include file="jspf/Menu.jspf" %>
-        
+<%@include file="jspf/Menu.jspf" %>
+        <link rel="stylesheet" href="css/css.css">        
         <div align="center">
             <h1>Amortização Constante</h1><br>
-        <div class="panel panel-default">
+            <div class="panel panel-default"><br>
        
         <form>
-        <h3>Capital</h3>
-        <input type="text" name="s"/>
-        <h3>Taxa(em %)</h3>       
-        <input type="text" name="t"/>        
-        <h3>Período(em meses)</h3>        
-        <input type="text" name="qtd"/><br><br>
+            <label>Capital</label><br>
+            <input type="text" name="s"/><br>
+            <label>Taxa (em %)</label> <br>      
+            <input type="text" name="t"/> <br>       
+            <label>Período (em meses)</label>  <br>      
+        <input type="text" name="qtd"/><br><br />
+
                         <input class="btn btn primary" type="submit" value="Enviar" />
                         <input class="btn btn primary" type="submit" value="Cancelar" />
-        </form><hr/>
+        </form>
             
+                
         <% try{
             double s = Double.parseDouble(request.getParameter("s"));
             double t = Double.parseDouble(request.getParameter("t"));
             double qtd = Integer.parseInt(request.getParameter("qtd"));
             
-            DecimalFormat df = new DecimalFormat("0,00");
+            DecimalFormat df = new DecimalFormat("#,##0.00");
             
             a=s/qtd;
             tota= a *qtd;
             totj=0;
             juros=(t*s)/100;
             %>            
-        <div class="container">
+          <div class="container">
             <table class="table table-bordered">
-            <tr><th colspan="1">Periodo</th><th>Saldo</th><th>Amortização</th><th>Juros</th><th>Prestação</th></tr>
+            <tr><th colspan="1">Periodo (Meses)</th><th>Saldo(R$)</th><th>Parcela(R$)</th><th>Juros(R$)</th><th>Prestação(R$)</th></tr>
+
         <% for(int i=1; i <= qtd; i++){ %>
         <%totj=totj+juros;%>
         

@@ -15,112 +15,67 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     </head>
 
-   
-
-    <body class="container">
+    <body>
+        <%-- Include do menu jspf --%> 
         <%@include file="jspf/Menu.jspf" %>
+                <link rel="stylesheet" href="css/css.css">
 
-        <div>
-            <h1><center>Amortização Americana</center></h1><br><hr>
-            <div class="container">
-                <form action="amortamer.jsp" method="POST">
-                    <div class="col-md-6 offset-md-5">
-                        <label>Capital</label><br />
-                        <input type="text" name="saldo" /><br />
-                    </div>
-                    
-                    <div class="col-md-6 offset-md-5">
-                        <label>Taxa (em %)</label><br />
-                        <input type="text" name="t" /><br />
-                    </div>
-                    
-                    <div class="col-md-6 offset-md-5">
-                        <label>Período (em meses)</label><br />
-                        <input type="text" name="m" /><br />
-                    </div>
-                    <br>
-                    <div class="col-md-6 offset-md-5">
+
+        <div align="center">
+            <h1>Amortização Americana</h1><br>
+        <div class="panel panel-default">
+        <div class="panel-body">
+        </div>
+        <form>
+            <label>Capital</label><br> <input type="text" name="SalDev"/><br/>
+            <label>Taxa (em %)</label> <br><input type="text" name="Taxa"/><br/>
+            <label>Período (em meses)</label> <br><input type="text" name="Tempo"/><br/><br>
                         <input class="btn btn primary" type="submit" value="Enviar" />
                         <input class="btn btn primary" type="submit" value="Cancelar" />
-                    </div>
-                </form>
-                <br>
-            </div>
-        </div>
+        </form><br>
+        
+        <%try{%>
+        <%
+            double saldev = Double.parseDouble(request.getParameter("SalDev"));
+            double taxa = Double.parseDouble(request.getParameter("Taxa"));
+            double tempo = Integer.parseInt(request.getParameter("Tempo"));
+            
+            DecimalFormat df = new DecimalFormat("#,##0.00");
+
+        %>
+        <div class="container">
+            <table class="table table-bordered">
+            <tr><th colspan="1">Periodo (Meses)</th><th>Saldo (R$)</th><th>Amortização (R$)</th><th>Juros (R$)</th><th>Prestação (R$)</th></tr>
+        <% double amort = 0; double juros = 0; double presta = 0;
+        taxa = taxa/100;
+        for(int ct = 0; ct <= tempo; ct++){
+        if(ct == 1){juros = saldev * taxa; presta = juros; }
+        if(ct == tempo){presta = presta + saldev; amort = saldev; saldev = 0; } %>
+            <tr>   
+                <th><%= ct %></th> <%-- Periodo --%>
+                <td><%= df.format(saldev) %></td> <%-- Saldo --%>
+                <td><%= df.format(amort) %></td> <%-- Amortização --%>
+                <td><%= df.format(juros) %></td> <%-- Juros --%>
+                <td><%= df.format(presta) %></td> <%-- Prestação --%>
+            </tr>
+            <%}
+            juros = juros*tempo;
+            double presttotal = amort+juros; %>
+            <tr>
+                <th>Total:</th> <%-- Total --%>
+                <th> --- </th>
+                <th><%= df.format(amort) %></th> <%-- Amortização Total --%>
+                <th><%= df.format(juros) %></th> <%-- Juros Total --%>
+                <th><%= df.format(presttotal) %></th> <%-- Prestação Total --%>
+            </tr>
+            </table>
+        <%}catch(Exception ex){%>
+        <b>Informe todos os dados acima corretamente</b><br>
+        <%}%>
         <br>
-        <div > 
-            <%
-                  
-                    out.println("<table class='table'>");
-                        out.println("<thead>");
-                        out.println("<tr>");
-                            out.println("<th scope='col'>Meses</th>");
-                            out.println("<th scope='col'>Saldo Devedor</th>");
-                            out.println("<th scope='col'>Amortização</th>");
-                            out.println("<th scope='col'>Juros</th>");
-                            out.println("<th scope='col'>Prestação</th>");
-                        out.println("</tr>");
-                        out.println("</thead>");
-                        
-                        try{
-                        double emprestimo = Double.parseDouble(request.getParameter("saldo"));
-                        double meses = Double.parseDouble(request.getParameter("m"));
-                        double taxa = Double.parseDouble(request.getParameter("t"));
-                          
-                        double juros = (emprestimo * (taxa / 100));
-                                
-                        DecimalFormat f = new DecimalFormat("#,##0.00");
-                        for(int cont = 0; cont <= meses; cont++){
-
-                            
-
-                            if(cont == 0){
-                                out.println("<th scope='col'>"+ cont +"</th>");
-                                out.println("<td scope='col'>" + f.format(emprestimo)+"</td>");
-                                out.println("<td scope='col'>----</td>");
-                                out.println("<td scope='col'>----</td>");
-                                out.println("<td scope='col'>----</td>");
-                                out.println("</tbody");
-                                out.println("</table>");
-
-                            } else if(cont == meses){ 
-                                out.println("<th scope='col'>"+ cont +"</th>");
-                                out.println("<td scope='col'>"+ f.format(emprestimo) +"</td>");
-                                out.println("<td scope='col'>"+ f.format(emprestimo) +"</td>");
-                                out.println("<td scope='col'>"+ f.format(juros) +"</td>");
-                                out.println("<td scope='col'>"+ f.format(juros + emprestimo) +"</td>");
-                                out.println("</tbody");
-                                out.println("</table>");        
-
-                            }else{ 
-                                out.println("<th scope='row'>"+ cont +"</th>");
-                                out.println("<td scope='col'>"+ f.format(emprestimo) +"</td>");
-                                out.println("<td scope='col'>----</td>");
-                                out.println("<td scope='col'>"+ f.format(juros) +"</td>");
-                                out.println("<td scope='col'>"+ f.format(juros) +"</td>");
-                                
-
-                                out.println("</tbody");
-                                out.println("</table>");        
-                            }
-                        }
-                                out.println("<th scope='col'></th>");
-                                out.println("<th scope='col'>Total</th>");
-                                out.println("<th scope='col'>"+ f.format(emprestimo) +"</th>");
-                                out.println("<th scope='col'>"+ f.format(juros * meses) +"</th>");
-                                out.println("<th scope='col'>"+ f.format(emprestimo + (juros * meses)) +"</th>");
-                                out.println("</tbody");
-                                out.println("</table>");
-                    
-                
-                        
-                } catch (Exception ex){
-                   
-                }
-            %>
         </div>
-
+        <%-- Include do rodapé --%>
+        <%@include file="jspf/footer.jspf" %>
     </body>
-                <%@include file="jspf/footer.jspf" %>
 
 </html>

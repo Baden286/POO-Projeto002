@@ -25,15 +25,16 @@
     <body>
         <%-- Include do menu jspf --%> 
         <%@include file="jspf/Menu.jspf" %>
+        <link rel="stylesheet" href="css/css.css">
         <div align="center">
         <h1>Tabela Price</h1><br>
-        <div class="panel panel-default">
-        <h3>Capital</h3>
+        <div class="panel panel-default"><br>
         <form>
-        <input type="text" name="PV"/>
-        <h3>Taxa(em %)</h3>       
-        <input type="text" name="i"/>        
-        <h3>Período(em meses)</h3>        
+            <label>Capital</label><br>
+        <input type="text" name="PV"/><br>
+        <label>Taxa (em %)</label> <br>      
+        <input type="text" name="i"/><br>        
+        <label>Período (em meses)</label> <br>       
         <input type="text" name="n"/></br>
 <br />
                    
@@ -60,7 +61,7 @@
                         juros = val * i ;
                         val = val -  ( pmt - juros);
                         
-                      DecimalFormat df = new DecimalFormat("0,00");
+                      DecimalFormat df = new DecimalFormat("#,##0.00");
             %>
                 
             
@@ -70,9 +71,9 @@
 
               </table>
         <%}catch(Exception ex){%>
-            <b>Informe todos os dados acima corretamente</b>.
+        <b>Informe todos os dados acima corretamente</b><br>
         <%}%>
-        <br><hr>
+        <br>
         </div>
         <%-- Include do rodapé --%>
                 <%@include file="jspf/footer.jspf" %>

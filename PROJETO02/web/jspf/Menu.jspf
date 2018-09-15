@@ -1,15 +1,12 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<head>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-            <link rel="stylesheet" href="../css/css.css">
-</head>
 
-<h4>
-    
-    <center><a href="Index.jsp">Página Inicial</a> || <a href="amortcons.jsp">Amortizaçao Constante</a> ||
-    <a href="amortamer.jsp">Amortização Americana </a> || <a href="tabelaprice.jsp">Tabela Price</a></center>    
-    
-    
-    
-</h4>
+            <div class="h-amortizacao">
+            </div>
+
+            <div class="topnav">
+                <a  href="Index.jsp">Página Inicial</a>
+                <a href="amortamer.jsp">Amortizacao Americana</a>
+                <a href="amortcons.jsp">Amortizacao Constante</a>
+                <a href="tabelaprice.jsp">Tabela Price</a>
+            </div>
